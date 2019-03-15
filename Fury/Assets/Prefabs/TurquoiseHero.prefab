@@ -3,8 +3,7 @@
 --- !u!1 &1318732598284828187
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1992000664535250, guid: e7cf6bd07205d624ab3bea51b8516b70,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
@@ -17,12 +16,11 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1318732598284828186
 Transform:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4242766771264440, guid: e7cf6bd07205d624ab3bea51b8516b70,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318732598284828187}
@@ -36,8 +34,7 @@ Transform:
 --- !u!108 &1318732598284828185
 Light:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 108037161373340228, guid: e7cf6bd07205d624ab3bea51b8516b70,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318732598284828187}
@@ -75,8 +72,7 @@ Light:
 --- !u!1 &1318732598416995678
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1213574940271672, guid: e7cf6bd07205d624ab3bea51b8516b70,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
@@ -99,8 +95,7 @@ GameObject:
 --- !u!4 &1318732598416995671
 Transform:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4737522304543426, guid: e7cf6bd07205d624ab3bea51b8516b70,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318732598416995678}
@@ -115,8 +110,7 @@ Transform:
 --- !u!212 &1318732598416995672
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 212057989441191188, guid: e7cf6bd07205d624ab3bea51b8516b70,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318732598416995678}
@@ -164,8 +158,7 @@ SpriteRenderer:
 --- !u!114 &1318732598416995673
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114467871730447956, guid: e7cf6bd07205d624ab3bea51b8516b70,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318732598416995678}
@@ -175,12 +168,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpForHero: 3
-  collisionEnemy: 0
 --- !u!114 &1318732598416995674
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114195144098048156, guid: e7cf6bd07205d624ab3bea51b8516b70,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318732598416995678}
@@ -192,7 +183,7 @@ MonoBehaviour:
   bullet: {fileID: 1535636425049064, guid: 75a3103d477fb18458ea3f22d77c4bc4, type: 3}
   target: {fileID: 0}
   hero: {fileID: 1318732598416995676}
-  force: 50
+  force: 10
   ammoPistolInClip: 12
   ammoPistolInStock: 60
   pistol_Bullets: []
@@ -202,8 +193,7 @@ MonoBehaviour:
 --- !u!58 &1318732598416995675
 CircleCollider2D:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 58044412641564326, guid: e7cf6bd07205d624ab3bea51b8516b70,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318732598416995678}
@@ -220,8 +210,7 @@ CircleCollider2D:
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 50372339178816340, guid: e7cf6bd07205d624ab3bea51b8516b70,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318732598416995678}
@@ -241,8 +230,7 @@ Rigidbody2D:
 --- !u!114 &1318732598416995677
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114948934039878350, guid: e7cf6bd07205d624ab3bea51b8516b70,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318732598416995678}

@@ -15,7 +15,7 @@ public class MovementEnemy : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Time.timeScale != 0)
         {

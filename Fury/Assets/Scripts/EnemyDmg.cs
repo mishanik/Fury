@@ -19,6 +19,7 @@ public class EnemyDmg : MonoBehaviour {
         if (hpForEnemy <= 0)
         {
             Destroy(this.gameObject);
+            MakingEnemies.addEnemy++;
         }
     }
 

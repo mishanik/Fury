@@ -51,10 +51,7 @@ public class Shooting : MonoBehaviour
 
                     ammoPistolInClip -= 1;
                 }
-                if (ammoPistolInClip <= 0)
-                {
-                    ammoPistolInClip = 0;
-                }
+                
             }
 
             pistol_Bullets = GameObject.FindGameObjectsWithTag("Pistol Bullet"); //Cycle to destroy bullets
@@ -93,6 +90,14 @@ public class Shooting : MonoBehaviour
             }
             Interface.ammoInClip = ammoPistolInClip;
             Interface.ammoInStock = ammoPistolInStock;
+        }
+        if (ammoPistolInClip <= 0)
+        {
+            ammoPistolInClip = 0;
+        }
+        if (ammoPistolInStock <= 0)
+        {
+            ammoPistolInStock = 0;
         }
     }
     IEnumerator TimeRecharge()
