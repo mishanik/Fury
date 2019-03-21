@@ -75,37 +75,48 @@ public class Shooting : MonoBehaviour
                 }
 
             }
+
             if (Input.GetKeyDown(recharge))
             {
 
                 if (ammoPistolInStock > 0 && ammoPistolInClip < 12 && rechargeIsPossible)
                 {
                     StartCoroutine(TimeRecharge());
-
-                    if (ammoPistolInStock <= 0)
-                    {
-                        ammoPistolInStock = 0;
-                    }
                 }
             }
+
+            if (ammoPistolInClip <= 0)
+            {
+                ammoPistolInClip = 0;
+            }
+
+            if (ammoPistolInClip == 0 && ammoPistolInStock > 0 && rechargeIsPossible)
+            {
+                StartCoroutine(TimeRecharge());
+            }
+
+            if (ammoPistolInStock <= 0)
+            {
+                ammoPistolInStock = 0;
+            }
             Interface.ammoInClip = ammoPistolInClip;
-            Interface.ammoInStock = ammoPistolInStock;
-        }
-        if (ammoPistolInClip <= 0)
-        {
-            ammoPistolInClip = 0;
-        }
-        if (ammoPistolInStock <= 0)
-        {
-            ammoPistolInStock = 0;
+            Interface.ammoInStock = ammoPistolInStock; 
         }
     }
     IEnumerator TimeRecharge()
     {
         rechargeIsPossible = false;
-        yield return new WaitForSeconds(1.1f);
-        ammoPistolInStock = ammoPistolInStock - (12 - ammoPistolInClip);
-        ammoPistolInClip = 12;
+        yield return new WaitForSeconds(2.3f);
+        if (ammoPistolInStock < 12)
+        { 
+            ammoPistolInClip = ammoPistolInStock;
+            ammoPistolInStock = ammoPistolInStock - (12 - ammoPistolInClip);
+        }
+        else
+        {
+            ammoPistolInStock = ammoPistolInStock - (12 - ammoPistolInClip);
+            ammoPistolInClip = 12;
+        }
         rechargeIsPossible = true;
     }
     IEnumerator ShotDelay()

@@ -61,6 +61,59 @@ public class MainControl : MonoBehaviour {
 
             }
 
+            if (Input.GetKey(top) && Input.GetKey(left))
+            {
+                movmentY = (speed / 1.5f);
+                movmentX = -(speed / 1.5f);
+                if (hero.GetComponent<Transform>().position.x <= -28.90003)
+                {
+                    movmentX = 0;
+                }
+                if (hero.GetComponent<Transform>().position.y >= 16.459)
+                {
+                    movmentY = 0;
+                }
+            }
+            if (Input.GetKey(top) && Input.GetKey(right))
+            {
+                movmentY = (speed / 1.5f);
+                movmentX = (speed / 1.5f);
+                if (hero.GetComponent<Transform>().position.y >= 16.459)
+                {
+                    movmentY = 0;
+                }
+                if (hero.GetComponent<Transform>().position.x >= 20.2)
+                {
+                    movmentX = 0;
+                }
+            }
+            if (Input.GetKey(bot) && Input.GetKey(left))
+            {
+                movmentY = -(speed / 1.5f);
+                movmentX = -(speed / 1.5f);
+                if (hero.GetComponent<Transform>().position.x <= -28.90003)
+                {
+                    movmentX = 0;
+                }
+                if (hero.GetComponent<Transform>().position.y <= -12.845)
+                {
+                    movmentY = 0;
+                }
+            }
+            if (Input.GetKey(bot) && Input.GetKey(right))
+            {
+                movmentY = -(speed / 1.5f);
+                movmentX = (speed / 1.5f);
+                if (hero.GetComponent<Transform>().position.x >= 20.2)
+                {
+                    movmentX = 0;
+                }
+                if (hero.GetComponent<Transform>().position.y <= -12.845)
+                {
+                    movmentY = 0;
+                }
+            }
+
             transform.Translate(movmentX, movmentY, 0);
 
             movmentX = 0;

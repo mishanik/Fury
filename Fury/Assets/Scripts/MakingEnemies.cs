@@ -10,6 +10,8 @@ public class MakingEnemies : MonoBehaviour {
     bool creatEnemy = true;
 
     public int timer = 0;
+
+    bool stop = false;
    
 	void Start () {
         StartCoroutine(IntervalMakingEnemies());
@@ -32,17 +34,18 @@ public class MakingEnemies : MonoBehaviour {
             Instantiate(redEnemy, new Vector3(Random.Range(-30.0f, 22.0f), 18, 0), Quaternion.identity);
             Instantiate(redEnemy, new Vector3(Random.Range(-30.0f, 22.0f), -14, 0), Quaternion.identity);
             Instantiate(redEnemy, new Vector3(22, Random.Range(-14.0f, 18.0f), 0), Quaternion.identity);
+            stop = true;
 
         }
 	}
 
     void RunTimer()
     {
-        timer++;
+      if(!stop) timer++;
     }
     IEnumerator IntervalMakingEnemies()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
         while (amount > 0)
         {
 
