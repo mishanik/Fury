@@ -7,6 +7,7 @@ TagManager:
   - Pistol Bullet
   - Red Enemy
   - Hp Hero
+  - Ammo Drop
   layers:
   - Default
   - TransparentFX

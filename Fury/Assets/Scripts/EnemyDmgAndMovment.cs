@@ -10,6 +10,11 @@ public class EnemyDmgAndMovment : MonoBehaviour {
     float saveSped;
     public Rigidbody2D enemy;
     public Rigidbody2D hero;
+    int random1;
+    int random2;
+    public GameObject hpDrop;
+    public GameObject ammoDrop;
+    Vector3 savePositEnemy;
 	void Start () {
         enemy = GetComponent<Rigidbody2D>();
         hero = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>();
@@ -24,8 +29,10 @@ public class EnemyDmgAndMovment : MonoBehaviour {
             Destroy(pistolBullet.gameObject);
             if (hpForEnemy <= 0)
             {
+                savePositEnemy = new Vector3(enemy.transform.position.x, enemy.transform.position.y, 1);
                 Destroy(this.gameObject);
-                MakingEnemies.addEnemy++;
+                DropForHero();
+                //MakingEnemies.addEnemy++;     
             }
         }
        
@@ -42,7 +49,20 @@ public class EnemyDmgAndMovment : MonoBehaviour {
             {
                 StartCoroutine(stopStep());
             }
-            Debug.print(sped);
+        }
+    }
+    void DropForHero()
+    {
+        random1 = Random.Range(1, 100);
+        if (random1 <= 3)
+        {
+            Instantiate(hpDrop, savePositEnemy, Quaternion.identity);
+        }
+        
+        random2 = Random.Range(1, 100);
+        if (random2 <= 10)
+        {
+            Instantiate(ammoDrop, savePositEnemy, Quaternion.identity);
         }
     }
     IEnumerator stopStep()

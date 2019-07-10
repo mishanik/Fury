@@ -89,8 +89,8 @@ public class MainControl : MonoBehaviour {
             }
             if (Input.GetKey(bot) && Input.GetKey(left))
             {
-                movmentY = -(speed / 1.5f);
-                movmentX = -(speed / 1.5f);
+                movmentY = -(speed / 1.4f);
+                movmentX = -(speed / 1.4f);
                 if (hero.GetComponent<Transform>().position.x <= -28.90003)
                 {
                     movmentX = 0;
@@ -102,8 +102,8 @@ public class MainControl : MonoBehaviour {
             }
             if (Input.GetKey(bot) && Input.GetKey(right))
             {
-                movmentY = -(speed / 1.5f);
-                movmentX = (speed / 1.5f);
+                movmentY = -(speed / 1.4f);
+                movmentX = (speed / 1.4f);
                 if (hero.GetComponent<Transform>().position.x >= 20.2)
                 {
                     movmentX = 0;
@@ -115,7 +115,6 @@ public class MainControl : MonoBehaviour {
             }
 
             transform.Translate(movmentX, movmentY, 0);
-
             movmentX = 0;
             movmentY = 0;
         }

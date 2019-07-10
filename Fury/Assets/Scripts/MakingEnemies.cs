@@ -6,53 +6,56 @@ public class MakingEnemies : MonoBehaviour {
 
     public GameObject redEnemy;
     public int amount;
-    static public int addEnemy = 0;
     bool creatEnemy = true;
-
+    int randomRange;
+    Vector3 randomCreate;
+    public static int wave;
+    int i;
     public int timer = 0;
-
-    bool stop = false;
-   
+    bool creat = true;
 	void Start () {
-        StartCoroutine(IntervalMakingEnemies());
-        InvokeRepeating("RunTimer", 1, 1);
+        
+        //InvokeRepeating("RunTimer", 1, 1);
+        wave = 0;
 	}
 	
 	void Update () {
-        if (addEnemy >= 5)
+        GameObject[] enemy = GameObject.FindGameObjectsWithTag("Red Enemy");
+        if (enemy.Length == 0 && creat)
         {
-            Instantiate(redEnemy, new Vector3(-30, 0, 0), Quaternion.identity);
-            Instantiate(redEnemy, new Vector3(0, 18, 0), Quaternion.identity);
-            Instantiate(redEnemy, new Vector3(0, -14, 0), Quaternion.identity);
-            Instantiate(redEnemy, new Vector3(22, 0, 0), Quaternion.identity);
-            addEnemy = 0;
+            creat = false;
+            creatEnemy = true;
         }
-        if (timer == 30 && creatEnemy)
+        if (creatEnemy)
         {
             creatEnemy = false;
-            Instantiate(redEnemy, new Vector3(-30, Random.Range(-14.0f, 18.0f), 0), Quaternion.identity);
-            Instantiate(redEnemy, new Vector3(Random.Range(-30.0f, 22.0f), 18, 0), Quaternion.identity);
-            Instantiate(redEnemy, new Vector3(Random.Range(-30.0f, 22.0f), -14, 0), Quaternion.identity);
-            Instantiate(redEnemy, new Vector3(22, Random.Range(-14.0f, 18.0f), 0), Quaternion.identity);
-            stop = true;
-
+            StartCoroutine(IntervalMakingEnemies());
+            amount++;
         }
 	}
 
-    void RunTimer()
-    {
-      if(!stop) timer++;
-    }
+    //void RunTimer()
+    //{
+    //    timer++;
+    //}
+
     IEnumerator IntervalMakingEnemies()
     {
         yield return new WaitForSeconds(2f);
-        while (amount > 0)
+        wave++;
+        i = amount;
+        while (i > 0)
         {
-
-            Instantiate(redEnemy, new Vector3(-30f, amount / 2, 0), Quaternion.identity);
-            amount--;
+            randomRange = Random.Range(1, 4);
+            if (randomRange == 1) randomCreate = new Vector3(-30, Random.Range(-14.0f, 18.0f), 0);
+            if (randomRange == 2) randomCreate = new Vector3(Random.Range(-30.0f, 22.0f), 18, 0);
+            if (randomRange == 3) randomCreate = new Vector3(22, Random.Range(-14.0f, 18.0f), 0);
+            if (randomRange == 4) randomCreate = new Vector3(Random.Range(-30.0f, 22.0f), -14, 0);
+            Instantiate(redEnemy, randomCreate, Quaternion.identity);
+            i--;
             yield return new WaitForSeconds(0.1f);
         }
+        creat = true;
     }
 
 }

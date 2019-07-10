@@ -6,7 +6,7 @@ public class Interface : MonoBehaviour {
     
     
     public Text counterBullets;
-    public Text counterEnemy;
+    public Text counterWave;
     public GameObject herts;
     public GameObject convasInterface;
 
@@ -32,7 +32,7 @@ public class Interface : MonoBehaviour {
 
     void LateUpdate()
     {
-        GameObject[] enemy = GameObject.FindGameObjectsWithTag("Red Enemy");
+        //GameObject[] enemy = GameObject.FindGameObjectsWithTag("Red Enemy");
         currentHp = HeroDmg.HpHero();
 
         FerstInstantiateHP();
@@ -70,7 +70,8 @@ public class Interface : MonoBehaviour {
             ammoInStock = 0;
         }
         counterBullets.text = ammoInClip + " / " + ammoInStock;
-        counterEnemy.text = "Enemy: " + enemy.Length;
+        if (MakingEnemies.wave != 0) counterWave.text = "Wave: " + MakingEnemies.wave;
+        else counterWave.text = "Wave: ";
 
 	}
 

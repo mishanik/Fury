@@ -167,7 +167,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 0.54
 --- !u!50 &50329594177194626
 Rigidbody2D:
   serializedVersion: 4
@@ -205,3 +205,6 @@ MonoBehaviour:
   sped: 0.05
   enemy: {fileID: 0}
   hero: {fileID: 0}
+  hpDrop: {fileID: 5024695872876139930, guid: 72dd70fc2aab9c54db6a0ffa97a40a41, type: 3}
+  ammoDrop: {fileID: 5412457776258554720, guid: 3586805240f775c43a53fe1d31d9103f,
+    type: 3}

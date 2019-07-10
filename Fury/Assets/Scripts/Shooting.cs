@@ -12,6 +12,7 @@ public class Shooting : MonoBehaviour
     Vector3 positionHero;
 
     public float force = 40;
+    public static int addStockDrop;
     public int ammoPistolInClip = 12;
     public int ammoPistolInStock = 60;
     bool rechargeIsPossible = true;
@@ -32,6 +33,11 @@ public class Shooting : MonoBehaviour
     {
         if (Time.timeScale != 0)
         {
+            if (addStockDrop > 0)
+            {
+                ammoPistolInStock += addStockDrop;
+                addStockDrop = 0;
+            } 
             positionHero = hero.GetComponent<Transform>().position;
 
             if (Input.GetMouseButtonDown(0))
@@ -108,9 +114,18 @@ public class Shooting : MonoBehaviour
         rechargeIsPossible = false;
         yield return new WaitForSeconds(2.3f);
         if (ammoPistolInStock < 12)
-        { 
-            ammoPistolInClip = ammoPistolInStock;
-            ammoPistolInStock = ammoPistolInStock - (12 - ammoPistolInClip);
+        {
+            if ((ammoPistolInClip + ammoPistolInStock) > 12)
+            {
+                ammoPistolInStock = (ammoPistolInClip + ammoPistolInStock)-12;
+                ammoPistolInClip = 12;
+
+            }
+            else if ((ammoPistolInClip + ammoPistolInStock) <= 12)
+            {
+                ammoPistolInClip += ammoPistolInStock;
+                ammoPistolInStock = 0;
+            }
         }
         else
         {
